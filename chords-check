@@ -1,0 +1,7 @@
+#!/bin/bash
+for song in $(ls ./data); do
+  numChars=$(wc -c ./data/$song/chords.txt | awk '{print $1}')
+  if [[ $numChars == 0 ]]; then
+    echo $song
+  fi
+done
